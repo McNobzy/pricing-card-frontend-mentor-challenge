@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  height: 100vh;
+  /*   height: 100vh; */
   font-size: 16px;
   font-family: Karla, serif;
   background-color: #e5eff5;
@@ -17,10 +17,11 @@ body {
 }
 
 .container {
-  position: relative;
-  width: 65vw;
-  left: 17.5%;
+  /*   position: relative; */
+  position: static;
+  left: 15%;
   top: 15%;
+  margin: 20px;
   text-align: left;
   border-radius: 7px;
   box-shadow: 2px 2px 10px #ccc;
@@ -30,7 +31,7 @@ body {
 }
 
 .across-bottom {
-  display: flex;
+  display: block;
 }
 
 .across,
@@ -40,7 +41,6 @@ body {
   border-width: 1px;
   border-style: solid;
   padding: 36px;
-  /*   text-align: justify; */
 }
 
 .across {
@@ -65,7 +65,7 @@ body {
 }
 
 .box-left {
-  border-radius: 0 0 0px 7px;
+  border-radius: 0px;
   background-color: #2ab2af;
   color: #f3f3f3;
   border-color: #2ab2af;
@@ -93,9 +93,6 @@ body {
   font-size: 1.7rem;
   font-weight: bolder;
   display: inline;
-  /*   position: fixed; */
-  /*   top: 10px; */
-  /*   line-height: 16px; */
 }
 
 .box-left > .per-month {
@@ -108,7 +105,7 @@ body {
 
 /*Styling the Why Us box*/
 .box-right {
-  border-radius: 0 0 7px 0;
+  border-radius: 0 0 7px 7px;
   color: #fff;
   background-color: #2ab2af;
   opacity: 0.8;
@@ -117,17 +114,16 @@ body {
 
 .box-right > ul {
   list-style: none;
-  z-index: 2;
   padding: 0;
 }
 
 .box-left,
 .box-right {
-  flex: 50%;
+  width: 100%;
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   text-align: center;
 }
@@ -137,34 +133,33 @@ footer a {
   font-weight: bolder;
 }
 
-/*Media queries for responsiveness*/
-@media screen and (max-width: 760px) {
-  .container {
-    position: relative;
-    bottom: 0px;
-  }
-
-  footer {
-    position: relative;
-    top: 90px;
-  }
-
-  .across-bottom {
-    display: block;
-    width: 100%;
-  }
-
-  .across-bottom .box-left,
-  .across-bottom .box-right {
-    /*     width: 100%; */
+@media (min-width: 576px) {
+  .across {
+    border-radius: 7px 7px 0 0;
   }
 
   .box-left {
-    border-radius: 0;
+    border-radius: 0 0 0px 7px;
+    /*     width: 50%; */
   }
 
   .box-right {
-    padding-left: 0px;
-    border-radius: 0 0 7px 7px;
+    border-radius: 0 0 7px 0;
+  }
+
+  .box-left,
+  .box-right {
+    width: 50%;
+  }
+
+  .container {
+    position: relative;
+    width: 700px;
+  }
+
+  .across-bottom {
+    display: flex;
   }
 }
+
+
